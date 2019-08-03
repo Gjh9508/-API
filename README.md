@@ -82,7 +82,7 @@
 >> keywords为搜索的关键字；  
 >> style为搜索的类型，默认为1，即搜索单曲：  
 >> style|含义  
->> ---|:---  
+>> ---|:---:  
 >> 1|单曲  
 >> 100|歌手  
 >> 10|专辑  
@@ -133,7 +133,7 @@
 
 - `songs_url(self,ids)`
 > **返回歌曲的URL？**
->> quality、rate_map的意义未知；
+>> quality、rate\_map的意义未知；
 
 - `song_lyric(self,music_id)`
 > **返回歌曲歌词**
