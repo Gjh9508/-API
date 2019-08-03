@@ -25,9 +25,9 @@
 > **两个必传参数，返回初始cookie值；**
 
 - `JavaScript解密方法`
-> **encrypted_request(self,text)**
-> **aes(self,text,key)**
-> **rsa(self,text,pubkey,modulus)**
+> **encrypted_request(self,text)**  
+> **aes(self,text,key)**  
+> **rsa(self,text,pubkey,modulus)**  
 > **create_key(self,size)**
 
 > 一个必传参数text,即为params；
