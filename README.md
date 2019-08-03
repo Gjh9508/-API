@@ -34,36 +34,36 @@
 >> **这四个方法用来构成解密请求，详细构造过程是由JavaScript生成；**
 
 - `request(self,method,path,params={},default={'code':-1},custom_cookies={'os':'pc'})`
-> **endpoint**
-> **crsf_token**是cookie中的一个必带参数，从cookie中解析而来；
-> **params**为解密参数，在浏览器F12中可以看到，如果不带请求不到数据；
-> **异常处理捕捉RequestException和ValueError**
->> 处理方式为写入log，最终返回data，出错时返回default；
+> **endpoint**  
+> **crsf_token**是cookie中的一个必带参数，从cookie中解析而来；  
+> **params**为解密参数，在浏览器F12中可以看到，如果不带请求不到数据；  
+> **异常处理捕捉RequestException和ValueError**  
+>> 处理方式为写入log，最终返回data，出错时返回default；  
 
 - `login(self,username,password)`
-> **登录函数,接收参数为帐号和密码**；
+> **登录函数,接收参数为帐号和密码**；  
 >> 还有另外一种登录方式，见源码；
 
 - `daily_task(self,is_mobile=True)`
-> 默认参数is_mobile值为True，在移动端签到；
+> 默认参数is\_mobile值为True，在移动端签到；
 
 - `user_playlist(self,uid,offset=0,limit=50)` 
 > **用户歌单**：
->> uid：用户id；
->> offset：偏移量，默认为0；
+>> uid：用户id；  
+>> offset：偏移量，默认为0；  
 >> limit：返回数量，默认为50；
 
 - `recommend_resource(self)`
 > **每日推荐歌单**：
->> 请求方式为post；
->> 直接返回推荐，登录时有效，未登录时返回空；
+>> 请求方式为post；  
+>> 直接返回推荐，登录时有效，未登录时返回空；  
 >> **返回数据类型为list()**
 
 - `recommend_playlist(self,total=True,offset=0,limit=20)`
 > **每日推荐歌曲**：
->> 请求方式为post；
->> 参数含义同上；
->> 直接返回推荐，登录时有效，未登录时返回空；
+>> 请求方式为post；  
+>> 参数含义同上；  
+>> 直接返回推荐，登录时有效，未登录时返回空；  
 >> **返回数据类型为list()**
 
 - `personal_fm(self)`
@@ -79,16 +79,16 @@
 
 - `search(self,keywords,stype=1,offset=0,totle="True",limit=50)`
 > **搜索**：
->> keywords为搜索的关键字；
->> style为搜索的类型，默认为1，即搜索单曲：
->> style|含义
->> ---|:---
->> 1|单曲
->> 100|歌手
->> 10|专辑
->> 1000|歌单
->> 1002|用户
->> *横向表格到底怎么打*
+>> keywords为搜索的关键字；  
+>> style为搜索的类型，默认为1，即搜索单曲：  
+>> style|含义  
+>> ---|:---  
+>> 1|单曲  
+>> 100|歌手  
+>> 10|专辑  
+>> 1000|歌单  
+>> 1002|用户  
+>> *横向表格到底怎么打*  
 >> 返回的数据类型为json；
 
 - `new_albums(self,offset,limit)`
@@ -97,12 +97,12 @@
 
 - `top_playlists(self,category="全部",order="hot",offset=0,limit=50)`
 > **获取歌单，排序方式为热门，类型为全部**：
->> 具体类型详见[category](http://music.163.com/#/discover/playlist/);
->> 如下图：![6b05d32c3325e0e920c5b2e76793b7d5](网易云音乐API.resources/1.jpg)
+>> 具体类型详见[category](http://music.163.com/#/discover/playlist/);  
+>> 如下图：![6b05d32c3325e0e920c5b2e76793b7d5](网易云音乐API.resources/1.jpg)  
 >> **返回数据类型为list()**
 
 - `playlist_catelogs(self)`
-> **不知道是个啥**
+> **不知道是个啥**  
 > **返回所有歌单类型，json**
 
 - `playlist_detail(self,playlist_id)`
@@ -119,7 +119,7 @@
 
 - `get_artist_album(self,artist_id,offset=0,limit=50)`
 > **歌手专辑**：
->> 好像是热门专辑;
+>> 好像是热门专辑;  
 >> 确认返回热门50个专辑；
 
 - `album(self,album_id)`
@@ -137,7 +137,7 @@
 
 - `song_lyric(self,music_id)`
 > **返回歌曲歌词**
->> 返回类型为list；
+>> 返回类型为list；  
 >> lv,kv,tv含义未知；
 
 - `song_tlytic(self,music_id)`
